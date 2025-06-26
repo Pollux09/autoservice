@@ -17,16 +17,16 @@ class Settings(BaseSettings):
             return f"http://{self.HOST}:{self.PORT}"
         return f"https://{self.HOST}:{self.PORT}"
 
-    POSTGRES_SERVER: str = "postgres"
+    POSTGRES_SERVER: str = "localhost"
     POSTGRES_PORT: int = 5432
     POSTGRES_USER: str = "postgres"
     POSTGRES_PASSWORD: str = "postgres"
     POSTGRES_DB: str = "autoservice"
 
-    ECHO: bool
-    ECHO_POOL: bool
-    POOL_SIZE: int
-    MAX_OVERFLOW: int
+    ECHO: bool = False
+    ECHO_POOL: bool = False
+    POOL_SIZE: int = 5
+    MAX_OVERFLOW: int =10
 
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> MultiHostUrl:

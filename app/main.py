@@ -3,11 +3,15 @@ import uvicorn
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.templating import Jinja2Templates
 
-from app.core.database import db_helper
-from app.core.config import settings
-from app.routers import router as api_router
-from app.core.logger import logger
+from core.database import db_helper
+from core.config import settings
+from routers import router as api_router
+from core.logger import logger
+
+
+templates = Jinja2Templates(directory="app/templates")
 
 
 @asynccontextmanager
