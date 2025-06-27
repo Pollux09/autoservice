@@ -23,5 +23,5 @@ async def login(session: SessionDep,
                 ):
     if email == "admin@admin.com":
         response.set_cookie("access_token", "admin_token", httponly=True, samesite="lax")
-        return RedirectResponse(url="/dashboard", status_code=303)
+        return RedirectResponse(url="/", status_code=303)
     return "Неверный логин или пароль"

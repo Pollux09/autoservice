@@ -29,6 +29,19 @@
         }
     </script>
 </head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const navPath = link.getAttribute('data-nav');
+            if (currentPath === navPath || currentPath.startsWith(navPath + "/")) {
+                link.classList.add('bg-blue-500', 'text-white', 'font-semibold');
+                link.classList.remove('text-dark-300');
+            }
+        });
+    });
+</script>
 <body>
     <main>
         {% block content %}{% endblock %}

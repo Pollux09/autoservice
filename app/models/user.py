@@ -19,5 +19,3 @@ class User(Base):
     avatar_url: Mapped[str] = mapped_column(String(255), default='')
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.now)
     role: Mapped[str] = mapped_column(String(255), default='client')
-
-    cars = relationship("Car", back_populates="owner")

@@ -17,5 +17,5 @@ class Car(Base):
     vin: Mapped[str] = mapped_column(String(17), unique=True, nullable=False)
     owner_id: Mapped[UUID] = mapped_column(UUID, ForeignKey('users.id'))
 
-    owner = relationship("User", back_populates="cars")
-    orders = relationship("Order", back_populates="car")
+    # owner = relationship("User", back_populates="cars")
+    # orders = relationship("Order", back_populates="car")

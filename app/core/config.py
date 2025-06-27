@@ -18,9 +18,9 @@ class Settings(BaseSettings):
         return f"https://{self.HOST}:{self.PORT}"
 
     POSTGRES_SERVER: str = "localhost"
-    POSTGRES_PORT: int = 5432
-    POSTGRES_USER: str = "postgres"
-    POSTGRES_PASSWORD: str = "postgres"
+    POSTGRES_PORT: int = 5442
+    POSTGRES_USER: str = "autoservice"
+    POSTGRES_PASSWORD: str = "autoservice"
     POSTGRES_DB: str = "autoservice"
 
     ECHO: bool = False
